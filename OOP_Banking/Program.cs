@@ -6,6 +6,10 @@ namespace OOP_Banking {
 
         static void Main(string[] args) {
 
+            Savings sav1 = new Savings();
+
+            
+
             /////////// p2. Create instance of savings
             Savings sav = new Savings();        // p2. Create instance of savings see vid 072919 part 4
             sav.Number = "1002";
@@ -16,6 +20,20 @@ namespace OOP_Banking {
             //****                                                                     
             // ** Calculate interest rate for 12 mos; 6 mos **  see vid 072919 part 4
             //****
+
+
+            ///////////  p2. Create instance of Money Market Acct **  see vid 072919 part 4
+            MoneyMkt MMkt = new MoneyMkt();
+            MMkt.Number = "1003";
+            MMkt.Name = "MoneyMarket 1";
+            MMkt.Intrate = 0.1;
+
+            Account[] accounts = new Account[] { sav1, MMkt };
+                foreach(Account acct in accounts) {
+                Console.WriteLine(acct.Print());
+            }
+            Console.WriteLine(sav1.Print());
+            Console.WriteLine(MMkt.Print());
 
             sav.Deposit(200);
             sav.Withdraw(100);
@@ -28,11 +46,7 @@ namespace OOP_Banking {
             /***/
 
 
-            ///////////  p2. Create instance of Money Market Acct **  see vid 072919 part 4
-            MoneyMkt MMkt = new MoneyMkt();      
-            MMkt.Number = "1003";
-            MMkt.Name = "MoneyMarket 1";
-            MMkt.Intrate = 0.1;
+            
 
             //****                                                                     
             // ** Calculate interest rate for 12 mos; 6 mos **  see vid 072919 part 4
@@ -46,8 +60,15 @@ namespace OOP_Banking {
             Console.WriteLine($"Money Market balance is {MMktbal} ");
             /***
             // ** Add own tests for negative entries, etc.**  see vid 072919 part 4
-            /***
+            /***/
 
+
+            Console.WriteLine(sav1.Print());        // printing out what comes back for these accounts
+            Console.WriteLine(MMkt.Print());
+
+            bool ItWorkded = mm.TransferTo(sav1, 50);
+            Console.WriteLine($"Money Market balance is {MMkt.GetBalance()} ");
+            Console.WriteLine($"Money Market balance is {sav1.GetBalance()} ");
 
 
 
