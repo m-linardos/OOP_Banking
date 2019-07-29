@@ -6,26 +6,81 @@ namespace OOP_Banking {
 
         static void Main(string[] args) {
 
-            Account acct = new Account();           // calling default constructor from Account class / new instance
-            acct.Number = "1001";                          // (variable.propertyname) represent the instance of the Account class
-            acct.Name = "Test Acount";
-            /*acct.Balance = 0; */                // can't insert the number into balabce / initially set to 0
-            acct.Deposit(20);                      //
-            acct.Withdraw(10);
-            decimal balance = acct.GetBalance();
-            Console.WriteLine($"Account balance is {balance} (should be 10)");
+            /////////// p2. Create instance of savings
+            Savings sav = new Savings();        // p2. Create instance of savings see vid 072919 part 4
+            sav.Number = "1002";
+            //sav.Balance = 0;           // p2. can't access it because it is private
+            sav.Name = "Savings 1";
+            sav.Intrate = 0.1;
 
-            acct.Deposit(-10);              // test for negative path - You can't deposit a neg. nbr
-            balance = acct.GetBalance();
-            Console.WriteLine($"Account balance is {balance} (should be 10)");
+            //****                                                                     
+            // ** Calculate interest rate for 12 mos; 6 mos **  see vid 072919 part 4
+            //****
 
-            acct.Deposit(-10);              // test for negative path / produce error message
-            balance = acct.GetBalance();
-            Console.WriteLine($"Account balance is {balance} (should be 10)");
+            sav.Deposit(200);
+            sav.Withdraw(100);
+            decimal interestToBePaid = sav.CalcInterest(12);
+            sav.PayInterest(interestToBePaid);
+            decimal savbal = sav.GetBalance();
+            Console.WriteLine($"Savings balance is {savbal} ");
+            /***/
+            // ** Add own tests for negative entries, etc. **  see vid 072919 part 4
+            /***/
 
-            acct.Deposit(20);
-            balance = acct.GetBalance();
-            Console.WriteLine($"Account balance is {balance} (should be 10)");
+
+            ///////////  p2. Create instance of Money Market Acct **  see vid 072919 part 4
+            MoneyMkt MMkt = new MoneyMkt();      
+            MMkt.Number = "1003";
+            MMkt.Name = "MoneyMarket 1";
+            MMkt.Intrate = 0.1;
+
+            //****                                                                     
+            // ** Calculate interest rate for 12 mos; 6 mos **  see vid 072919 part 4
+            //****
+
+            MMkt.Deposit(200);
+            MMkt.Withdraw(100);
+            interestToBePaid = MMkt.CalcInterest(12);
+            MMkt.PayInterest(interestToBePaid);
+            decimal MMktbal = sav.GetBalance();
+            Console.WriteLine($"Money Market balance is {MMktbal} ");
+            /***
+            // ** Add own tests for negative entries, etc.**  see vid 072919 part 4
+            /***
+
+
+
+
+
+
+            //****                                                                     
+            // ** Add own tests for negative entries, etc. **  see vid 072919 part 3
+            //****
+
+
+
+
+            //Account acct = new Account();           // calling default constructor from Account class / new instance
+            //acct.Number = "1001";                          // (variable.propertyname) represent the instance of the Account class
+            //acct.Name = "Test Acount";
+            ///*acct.Balance = 0; */                // can't insert the number into balabce / initially set to 0
+
+            //acct.Deposit(20);                      //
+            //acct.Withdraw(10);
+            //decimal balance = acct.GetBalance();
+            //Console.WriteLine($"Account balance is {balance} (should be 10)");
+
+            //acct.Deposit(-10);              // test for negative path - You can't deposit a neg. nbr
+            //balance = acct.GetBalance();
+            //Console.WriteLine($"Account balance is {balance} (should be 10)");
+
+            //acct.Deposit(-10);              // test for negative path / produce error message
+            //balance = acct.GetBalance();
+            //Console.WriteLine($"Account balance is {balance} (should be 10)");
+
+            //acct.Deposit(20);
+            //balance = acct.GetBalance();
+            //Console.WriteLine($"Account balance is {balance} (should be 10)");
         }
     }
 }

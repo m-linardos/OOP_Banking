@@ -22,8 +22,8 @@ namespace OOP_Banking {
             }
 
         }
-    }
-        //public void Withdraw(decimal Amount) {
+    
+        public void Withdraw(decimal Amount) {
         //    if(this.Balance >= Amount) {            
         //    this.Balance -= Amount;
         //    }
