@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace OOP_Banking {             ///COMPLETE ///////////
+namespace OOP_Banking {          
 /// ///
 /* CREATE CHECKING ACCOUNT FUNCTION WITH CHECK NUMBER AND */
     public class Checking : Account {
 
-        public int LastCheckNumber { get; set; } = 0;
+        private int LastCheckNumber { get; set; } = 0;      // 'private' so that no other class can do anything with it
         
 
-            /// 
-            /// ///     COMPLETE        ///////////
+            
             
         public bool Pay(int CheckNumber, decimal Amount) {
             bool success = this.Withdraw(Amount);
