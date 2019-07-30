@@ -7,6 +7,14 @@ namespace OOP_Banking {
                                                         //able to access public properties and methods
         public double Intrate { get; set; } = 0.03;     // add interest rate; it's unique to savings; default - 3%
         
+        public bool ChangeRate(double chgRate) {
+            if((this.Intrate + chgRate) < 0) {
+                return false;
+            }
+            this.Intrate += chgRate;
+            return true;
+        }
+
         public override string Print() {   // override allows it to print interest rates              // goget our print data and tack on interest rate
             return base.Print() + $" | {Intrate}";      // 'base' tells it reference the method in the parent class
         }

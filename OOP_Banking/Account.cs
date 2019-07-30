@@ -6,8 +6,7 @@ namespace OOP_Banking {
 
     public class Account {
 
-        public string Number { get; set; }
-        /*public*/
+        public string Number { get; set; }        
         private decimal Balance { get; set; } = 0.0M;   //  changed public to private / numbers with decimals are doubles and floats / add 'M' to it to treat as a decimal, not a float / Can also be '0'
         public string Name { get; set; }
         public bool IsActive { get; set; } = true;      // default true
@@ -26,8 +25,7 @@ namespace OOP_Banking {
             return false;    // if get to this line, we know something went wrong
         }
         public bool /*void*/ Deposit(decimal Amount) {                    // parameter for amount
-            this.Balance += Amount;
-           
+            //this.Balance += Amount;           
             if (Amount <= 0) {
                 Console.WriteLine("Deposit amount must be greater than 0");
             } else {
@@ -37,15 +35,15 @@ namespace OOP_Banking {
             return false; // p4 added
         }
     
-        public bool /*void*/ Withdraw(decimal Amount) {
-        //    if(this.Balance >= Amount) {            
-        //    this.Balance -= Amount;
-        //    }
-            if (Amount <= 0) {
-                Console.WriteLine("Deposit amount must be greater than 0");
+           //public void Withdraw(decimal Amount) {
+            //    if(this.Balance >= Amount) {            
+            //    this.Balance -= Amount;
+            //    }
+            public bool Withdraw(decimal Amount) {
+                if (Amount <= 0) {
+                Console.WriteLine($"Withdraw amount must be greater than 0");
                 return false;       // p4 added
-            }
-            else {
+            } else {
                 if(this.Balance >= Amount) {
                     this.Balance -= Amount;
                     return true;        // p4 added
