@@ -12,7 +12,7 @@ namespace OOP_Banking {
         public bool IsActive { get; set; } = true;      // default true
 
 
-        public virtual string Print() {     // virtual
+        public virtual string Print() {     // virtual added to class that's being inherited from
             return $"{this.Number} | {this.Balance} | {this.Name}";     // all properties are in savings and money market
         }
 

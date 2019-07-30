@@ -6,7 +6,7 @@ namespace OOP_Banking {
     public class MoneyMkt : Account {
         public double MMRate { get; set; } = 0.03;
 
-        public override string Print() {    // override  allows it to print interest rates               // go get our print data and tack on interest rate
+        public override string Print() {    // override  allows it to print interest rates               // go get our print data and tack on interest rate / Polymorphism
             return base.Print() + $" | {MMRate}";      // 'base' tells it reference the method in the parent class
         }
         public void PayInterest(int months) {
