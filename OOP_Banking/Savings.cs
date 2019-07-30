@@ -15,7 +15,7 @@ namespace OOP_Banking {
             return true;
         }
 
-        public override string Print() {   // override allows it to print interest rates              // goget our print data and tack on interest rate
+        public /*virtual*/ override string Print() {   // override allows it to print interest rates              // goget our print data and tack on interest rate
             return base.Print() + $" | {Intrate}";      // 'base' tells it reference the method in the parent class
         }
         // interest = .03/12 x months x balance

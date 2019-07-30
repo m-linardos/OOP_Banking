@@ -11,6 +11,11 @@ namespace OOP_Banking {
             sav1.Name = "My savings account";
             sav1.ChangeRate(0.02);
 
+            Savings sav2 = new Savings();
+            sav2.Number = "SAV002";
+            sav2.Name = "Christmas Fund";
+            sav2.ChangeRate(0.04);
+
 
             /////////// part 2. Create instance of savings
             /*
@@ -38,40 +43,41 @@ namespace OOP_Banking {
                 foreach(Account acct in accounts) {
                 Console.WriteLine(acct.Print());
             }
+            // printing out what comes back for these accounts
             Console.WriteLine(sav1.Print());
             Console.WriteLine(MMkt.Print());
-                                    /*
-                                                sav.Deposit(200);
-                                                sav.Withdraw(100);
-                                                decimal interestToBePaid = sav.CalcInterest(12);
-                                                sav.PayInterest(interestToBePaid);
-                                                decimal savbal = sav.GetBalance();
-                                                Console.WriteLine($"Savings balance is {savbal} ");
+            Console.WriteLine(sav2.Print());
+            /*
+                        sav.Deposit(200);
+                        sav.Withdraw(100);
+                        decimal interestToBePaid = sav.CalcInterest(12);
+                        sav.PayInterest(interestToBePaid);
+                        decimal savbal = sav.GetBalance();
+                        Console.WriteLine($"Savings balance is {savbal} ");
 
-            /***/
+/***/
             // ** Add own tests for negative entries, etc. **  see vid 072919 part 4
             /***/
-           
-            
+
+
 
             //****                                                                     
             // ** Calculate interest rate for 12 mos; 6 mos **  see vid 072919 part 4
             //****
 
-                //MMkt.Deposit(200);
-                //MMkt.Withdraw(100);
-                //interestToBePaid = MMkt.CalcInterest(12);
-                //MMkt.PayInterest(interestToBePaid);
-                //decimal MMktbal = sav.GetBalance();
-                //Console.WriteLine($"Money Market balance is {MMktbal} ");
+            //MMkt.Deposit(200);
+            //MMkt.Withdraw(100);
+            //interestToBePaid = MMkt.CalcInterest(12);
+            //MMkt.PayInterest(interestToBePaid);
+            //decimal MMktbal = sav.GetBalance();
+            //Console.WriteLine($"Money Market balance is {MMktbal} ");
 
             /***
             // ** Add own tests for negative entries, etc.**  see vid 072919 part 4
             /***/
 
 
-            Console.WriteLine(sav1.Print());        // printing out what comes back for these accounts
-            Console.WriteLine(MMkt.Print());
+           
          /*
             bool ItWorkded = mm.TransferTo(sav1, 50);
             Console.WriteLine($"Money Market balance is {MMkt.GetBalance()} ");
